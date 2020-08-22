@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đơn hàng</title>
+</head>
+<body>
+    <h1>Tạo đơn hàng</h1>
+    <form action="/luu-don-hang" method="post">
+        <select name="KhachHangID">
+            <% khs.map(e=> { %>
+            <option value="<%= e.ID %>"><%= e.TenKH %></option>
+            <% }) %>
+        </select>
+        <label>Chọn sản phẩm</label>
+        <ul>
+            <% sps.map(e=> { %>
+            <li><label><input type="checkbox" name="SanPhamID[]" value="<%= e.ID %>"><%= e.TenSP %></label></li>
+            <% }) %>
+        </ul>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

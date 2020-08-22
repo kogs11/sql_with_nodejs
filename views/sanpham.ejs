@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Danh sach san pham</title>
+</head>
+<body>
+    <h1>Đây là danh sách sản phẩm:</h1>
+    <h2><a href="#">Thêm sản phẩm</a></h2>
+    <form action="/them-san-pham" method="post">
+        <input type="text" name="TenSP" placeholder="Tên SP"/>
+        <input type="text" name="MoTa" placeholder="Mô tả"/>
+        <input type="text" name="DonVi" placeholder="Đơn vị"/>
+        <input type="number" name="Gia" placeholder="Giá">
+        <button type="submit">Submit</button>
+    </form>
+    <ol>
+        <% sp.map(function (v){ %>
+            <li><%= v.TenSP %></li>
+        <% }) %>
+    </ol>
+</body>
+</html>
